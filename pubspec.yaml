@@ -7,11 +7,14 @@ environment:
   sdk: ">=3.4.1 <4.0.0"
 
 dependencies:
+  equatable: ^2.0.6
   flutter:
     sdk: flutter
   google_mlkit_object_detection: ^0.14.0
   image_cropper: ^8.0.2
   image_picker: ^1.1.2
+  path: ^1.9.0
+  path_provider: ^2.1.5
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -20,3 +23,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/model.tflite
