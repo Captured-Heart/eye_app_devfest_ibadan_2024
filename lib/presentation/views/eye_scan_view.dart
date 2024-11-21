@@ -57,7 +57,7 @@ class _EyeScanViewState extends State<EyeScanView> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        if (isLandscape)
+                        if (filePath.isNotEmptyOrNull &&isLandscape)
                           SizedBox(
                             height: 150,
                             width: 300,
