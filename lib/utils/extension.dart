@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:eye_app_devfest_2024/utils/animations/toggle_animation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -83,13 +82,6 @@ extension DebugBorderWidgetExtension on Widget {
 
 extension GestureExtension on Widget {
   Widget onTap({required VoidCallback? onTap, required String tooltip}) {
-    return ToggleAnimation(
-      onTap: onTap,
-      child: Tooltip(message: tooltip, child: this),
-    );
-  }
-
-  Widget onTapWithoutAnimation({required VoidCallback? onTap, required String tooltip}) {
     return GestureDetector(
       onTap: onTap,
       child: Tooltip(message: tooltip, child: this),
