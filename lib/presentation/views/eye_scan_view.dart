@@ -21,18 +21,11 @@ class _EyeScanViewState extends State<EyeScanView> {
 
   @override
   Widget build(BuildContext context) {
-    inspect(_eyeScanNotifier);
     final isLandscape = MediaQuery.orientationOf(context) == Orientation.landscape;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Eye_App Demo Devfest Ibadan 2024'),
-        actions: [
-          const Icon(Icons.info_rounded).padSymmetric(horizontal: 10).onTap(
-                onTap: () {},
-                tooltip: 'Metrics',
-              ),
-        ],
       ),
       body: ListenableBuilder(
         listenable: _eyeScanNotifier,
