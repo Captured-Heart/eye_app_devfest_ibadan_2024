@@ -1,5 +1,5 @@
 name: eye_app_devfest_2024
-description: "A cross-platform app to demonstrate Object detection and Labelling, with custom local model in 'assets' for Diabetic Retinopathy"
+description: "A multi-platform application (Android & iOS) showcasing automated detection and classification of images using a Firebase Machine learning kit and a locally stored machine learning model that can identify retinal images for patients with Diabetic Retinopathy"
 publish_to: "none"
 version: 0.1.0
 
