@@ -45,6 +45,9 @@ enum DiagnosisLevel {
   String get toMap =>
       'level: $level, stage: $stage, description: $descriptions, followUp: $followUp';
   static DiagnosisLevel labeltext(String level) {
+    if (level.startsWith('level')) {
+      level = level.substring(6).trim();
+    }
     return DiagnosisLevel.values.firstWhere(
       (element) => level == element.level,
       orElse: () => DiagnosisLevel.levelUNKNOWN,
