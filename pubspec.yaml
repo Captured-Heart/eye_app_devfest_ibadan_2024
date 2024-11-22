@@ -1,5 +1,5 @@
 name: eye_app_devfest_2024
-description: "A new Flutter project."
+description: "A cross-platform app to demonstrate Object detection and Labelling, with custom local model in 'assets' for Diabetic Retinopathy"
 publish_to: "none"
 version: 0.1.0
 
