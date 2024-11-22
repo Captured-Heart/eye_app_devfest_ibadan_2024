@@ -35,6 +35,7 @@ class _EyeScanViewState extends State<EyeScanView> {
           bool isLoadingPick = _eyeScanNotifier.isLoadingPick.value;
           bool isLoadingScan = _eyeScanNotifier.isLoadingScan.value;
           List<DetectedObject> objectList = _eyeScanNotifier.objectList.value;
+          inspect(objectList);
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: SingleChildScrollView(
@@ -57,7 +58,7 @@ class _EyeScanViewState extends State<EyeScanView> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        if (filePath.isNotEmptyOrNull &&isLandscape)
+                        if (filePath.isNotEmptyOrNull && isLandscape)
                           SizedBox(
                             height: 150,
                             width: 300,
@@ -123,10 +124,11 @@ class _EyeScanViewState extends State<EyeScanView> {
                                 objectList.length,
                                 (index) {
                                   var object = objectList[index];
+                                  inspect(object);
                                   // 'this is ${object.labels[0].text.substring(6)}'.logError();
                                   String title() {
-                                    return '${List.generate(object.labels.length, (index) {
-                                      Label labels = object.labels[index];
+                                    return '${List.generate(object.labels.length, (index2) {
+                                      Label labels = object.labels[index2];
                                       var newLabel = LabelModel(
                                           confidence: labels.confidence,
                                           index: labels.index,
@@ -142,8 +144,7 @@ class _EyeScanViewState extends State<EyeScanView> {
                                       dataCell(context, title: title()),
                                       object.labels.isNotEmptyOrNull
                                           ? dataCell(context,
-                                              title: DiagnosisLevel.labeltext(
-                                                      object.labels[0].text.substring(6).trim())
+                                              title: DiagnosisLevel.labeltext(object.labels[0].text)
                                                   .toMap)
                                           : dataCell(context, title: ''),
                                     ],

@@ -47,7 +47,7 @@ class ObjectDetectionService {
 
   Future<(String?, List<DetectedObject>?)> processImage({required String imgPath}) async {
     //await optionsLocal()
-    var objectDetector =
+    ObjectDetector objectDetector =
         ObjectDetector(options: await optionsLocal()); //initialize the object detector
     final inputImage = InputImage.fromFilePath(imgPath); // convert file image to Input image
     try {
@@ -71,7 +71,10 @@ class ObjectDetectionService {
 
 Future<String> getModelPath(String asset) async {
   final path = '${(await getApplicationSupportDirectory()).path}/$asset';
-  await Directory(dirname(path)).create(recursive: true);
+  // 'this is the original path: $path'.logError();
+  String dirPath = dirname(path);
+  // 'this is dirPath: $dirPath'.logError();
+  await Directory(dirPath).create(recursive: true);
   final file = File(path);
   if (!await file.exists()) {
     final byteData = await rootBundle.load(asset);
