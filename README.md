@@ -10,6 +10,10 @@
 
 ## AN INTRO VIDEO OF THE APP
 
+
+https://github.com/user-attachments/assets/da023955-9961-4897-990d-cf1377528941
+
+
 </div>
 
 ---
